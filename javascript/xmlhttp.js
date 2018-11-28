@@ -4,7 +4,7 @@
   // creates a new object called xhr
   // which will handle the API call
   let xhr = new XMLHttpRequest();
-  // console.log(`Current readyState: ${xhr.readyState}`);
+  console.log(`Current readyState: ${xhr.readyState}`);
 
   let queryBox = document.getElementById("wikiQuery");
   let searchForm = document.getElementById("searchForm");
@@ -38,7 +38,7 @@ https://en.wikipedia.org/w/api.php?action=query&format=json&generator=search&pro
 */
 
   function gatherData(data) {
-    // console.log(data);
+    console.log(data);
     // initialise some variables
     let theData = "";
     let langLinks = "";
@@ -77,7 +77,7 @@ https://en.wikipedia.org/w/api.php?action=query&format=json&generator=search&pro
     xhr.send();
     // if the response was ok, handle the response data using the gatherData function
     xhr.onreadystatechange = function() {
-      // console.log(`Current readyState: ${xhr.readyState}`);
+      console.log(`Current readyState: ${xhr.readyState}`);
       if (xhr.readyState === 4 && xhr.status === 200) {
         // parse the response JSON
         let response = JSON.parse(xhr.responseText);
